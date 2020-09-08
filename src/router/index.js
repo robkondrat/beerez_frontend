@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
+import BeersShow from '../views/BeersShow.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,11 @@ Vue.use(VueRouter)
     path: '/logout',
     name: 'logout',
     component: Logout
+  },
+  {
+    path: '/beers/:id',
+    name: 'beers-show',
+    component: BeersShow
   }
 ]
 
