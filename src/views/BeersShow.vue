@@ -4,11 +4,12 @@
       <div class="row">
         <div class="col-md-6">
           <h1>{{ beer.name }}</h1>
-          <p>{{ beer.price }}</p>
+          <p>${{ beer.price }}</p>
           <p>{{ beer.category }}</p>
           <img :src="beer.image_url" :alt="beer.name" width=300>
           <p>{{ beer.description }}</p>
-          <p>{{ beer.abv }}</p>
+          <p>ABV: {{ beer.abv }}%</p>
+          <p>Brewery: {{ beer.brewery.name }}</p>
         </div>
       </div>
     </div>
@@ -33,7 +34,10 @@
           image_url: "",
           description: "",
           abv: "",
-          in_stock: ""
+          in_stock: "",
+          brewery: {
+            name: ""
+          }
         }
       };
     },
