@@ -1,11 +1,15 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col" v-for="beer in beers">
-
-          <img :src="beer.image_url" :alt="beer.name" width="200">
-
-
+      <div class="col-sm" v-for="beer in beers">
+        <div>
+          <router-link :to="'/beers/' + beer.id">{{ beer.name }}</router-link>
+        </div>
+        <div>
+          <router-link :to="'/beers/' + beer.id">
+            <img class="image-fluid" :src="beer.image_url" :alt="beer.name">
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
