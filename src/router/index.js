@@ -6,6 +6,7 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import BeersShow from '../views/BeersShow.vue'
 import BeersIndex from '../views/BeersIndex.vue'
+import BreweriesIndex from '../views/BreweriesIndex.vue'
 
 Vue.use(VueRouter)
 
@@ -47,6 +48,11 @@ Vue.use(VueRouter)
     path: '/beers/',
     name: 'beers-index',
     component: BeersIndex
+  },
+  {
+    path: '/breweries',
+    name: 'breweries-index',
+    component: BreweriesIndex
   }
 ]
 
