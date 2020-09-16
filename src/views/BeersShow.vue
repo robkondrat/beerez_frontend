@@ -1,25 +1,24 @@
 <template>
   <div class="beer-show">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h1>{{ beer.name }}</h1>
-          <p>${{ beer.price }}</p>
-          <p>{{ beer.category }}</p>
-          <img :src="beer.image_url" :alt="beer.name" width=300>
-          <p>{{ beer.description }}</p>
-          <p>ABV: {{ beer.abv }}%</p>
-          <p>
-            Brewery: 
-            <router-link :to="'/breweries/' + beer.brewery.id">{{ beer.brewery.name }}</router-link>
-            <router-link :to="'/breweries/' + beer.brewery.id">
-              <img :src="beer.brewery.image_url" :alt="beer.brewery.name">
-            </router-link>
-
-          </p>
-        </div>
+    <h1>{{ beer.name }}</h1>
+    <p>${{ beer.price }}</p>
+    <p>{{ beer.category }}</p>
+    <img :src="beer.image_url" :alt="beer.name" width=300>
+    <p>{{ beer.description }}</p>
+    <p>ABV: {{ beer.abv }}%</p>
+    <p>
+      Brewery: 
+      <div>
+        <router-link :to="'/breweries/' + beer.brewery.id">
+          {{ beer.brewery.name }}
+        </router-link>
       </div>
-    </div>
+      <div>
+        <router-link :to="'/breweries/' + beer.brewery.id">
+          <img :src="beer.brewery.image_url" :alt="beer.brewery.name">
+        </router-link>
+      </div>
+    </p>
   </div>
 </template>
 
