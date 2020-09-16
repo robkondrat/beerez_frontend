@@ -50,6 +50,9 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  /* background-image: url('/Users/robkondratowicz/Desktop/Actualize/beerez_frontend/public/dark_wood.png'); */
+  background-color: grey;
+
 }
 
 #nav {
@@ -66,6 +69,12 @@
 }
 
 img {
-  width: 400px;
+  width: 150px;
+  max-height: 300px;
 }
+
+body {
+  color: green;
+}
+
 </style>
