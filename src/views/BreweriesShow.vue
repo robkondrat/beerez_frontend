@@ -10,8 +10,11 @@
           <img :src="brewery.image_url" :alt="brewery.name" width=300>
           <p>{{ brewery.description }}</p>
           <p>Popular Beers:</p>
-          <p v-for="beer in brewery.beers">
+          <router-link v-for="beer in brewery.beers" :to="'/beers/' + beer.id">
             {{ beer.name }}
+            <img :src="beer.image_url" :alt="beer.name">
+          </router-link>
+
           </p>
         </div>
       </div>

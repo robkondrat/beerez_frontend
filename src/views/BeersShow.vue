@@ -9,7 +9,14 @@
           <img :src="beer.image_url" :alt="beer.name" width=300>
           <p>{{ beer.description }}</p>
           <p>ABV: {{ beer.abv }}%</p>
-          <p>Brewery: {{ beer.brewery.name }}</p>
+          <p>
+            Brewery: 
+            <router-link :to="'/breweries/' + beer.brewery.id">{{ beer.brewery.name }}</router-link>
+            <router-link :to="'/breweries/' + beer.brewery.id">
+              <img :src="beer.brewery.image_url" :alt="beer.brewery.name">
+            </router-link>
+
+          </p>
         </div>
       </div>
     </div>
@@ -36,7 +43,9 @@
           abv: "",
           in_stock: "",
           brewery: {
-            name: ""
+            id: "",
+            name: "",
+            image_url: ""
           }
         }
       };

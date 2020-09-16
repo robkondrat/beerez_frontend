@@ -7,7 +7,7 @@
         </div>
         <div>
           <router-link :to="'/beers/' + beer.id">
-            <img class="image-fluid" :src="beer.image_url" :alt="beer.name">
+            <img :src="beer.image_url" :alt="beer.name">
           </router-link>
         </div>
       </div>
