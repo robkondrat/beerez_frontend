@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">BeerEZ</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">BeerEZ</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,25 +9,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <router-link class="dropdown-item" to="/">Home</router-link>
+            <router-link class="nav-link" to="/">Home </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="dropdown-item" to="/about/">About</router-link>
+            <router-link class="nav-link" to="/beers/">Beers</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="dropdown-item" to="/beers/">Beers</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="dropdown-item" to="/breweries/">Breweries</router-link>
+            <router-link class="nav-link" to="/breweries/">Breweries</router-link>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
+              Account
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <router-link class="dropdown-item" to="/breweries/">Breweries</router-link>
-              <div class="dropdown-divider"></div>
-              <router-link class="dropdown-item" to="/beers/">Beers</router-link>
+              <router-link class="dropdown-item" to="/signup">Signup</router-link>
+              <router-link class="dropdown-item" to="/login">Login</router-link>
+              <router-link class="dropdown-item" to="/logout">Logout</router-link>
             </div>
           </li>
         </ul>

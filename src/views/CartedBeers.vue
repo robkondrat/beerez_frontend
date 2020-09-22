@@ -1,0 +1,59 @@
+<template>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm" v-for="cartedBeers in carted_beers">
+        <div>
+          <router-link :to="'/carted_beers/' + cartedBeers.id">{{ cartedBeers.beer.name }}</router-link>
+        </div>
+        <div>
+          <router-link :to="'/carted_beers/' + cartedBeers.id">
+            <img class="image-fluid" :src="cartedBeers.beer.image_url" :alt="cartedBeers.beer.name">
+          </router-link>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  var axios = require("axios");
+
+  export default {
+    data() {
+      return {
+        carted_beers: [],
+        id: "",
+        status: "",
+        user_id: "",
+        beer_id: "",
+        quantity: "",
+        order_id: "",
+        beer: {
+          id: "",
+          name: "",
+          price: "",
+          tax: "",
+          is_discounted: "",
+          total: "",
+          category: "",
+          image_url: "",
+          description: "",
+          abv: "",
+          in_stock: "",
+          formatted: {
+            price: "",
+            tax: "",
+            total: ""
+          }
+        }
+      };
+    },
+    created() {
+      axios.get("/api/carted_beers/")
+        .then(response => {
+          console.log(response.data);
+          this.carted_beers = response.data;
+        })
+    }
+  }
+</script>
