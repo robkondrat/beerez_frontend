@@ -10,6 +10,19 @@
             <img class="image-fluid" :src="cartedBeers.beer.image_url" :alt="cartedBeers.beer.name">
           </router-link>
         </div>
+        <div>
+          Status: {{ cartedBeers.status }}
+        </div>
+        <div>
+          User ID: {{ cartedBeers.user_id }}
+        </div>
+        <div>
+          Quantity: {{ cartedBeers.quantity }}
+        </div>
+        <div>
+          Subtotal: {{ cartedBeers.subtotal }}
+        </div>
+
       </div>
     </div>
   </div>
@@ -28,6 +41,7 @@
         beer_id: "",
         quantity: "",
         order_id: "",
+        subtotal: "",
         beer: {
           id: "",
           name: "",
