@@ -9,6 +9,7 @@ import BeersIndex from '../views/BeersIndex.vue'
 import BreweriesIndex from '../views/BreweriesIndex.vue'
 import BreweriesShow from '../views/BreweriesShow.vue'
 import CartedBeers from '../views/CartedBeers.vue'
+import Orders from '../views/Orders.vue'
 
 Vue.use(VueRouter)
 
@@ -65,6 +66,11 @@ Vue.use(VueRouter)
     path: '/carted_beers',
     name: 'carted-beers',
     component: CartedBeers
+  },
+  {
+    path: '/orders',
+    name: 'orders',
+    component: Orders
   }
 ]
 
