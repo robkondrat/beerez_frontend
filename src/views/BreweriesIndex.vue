@@ -1,15 +1,24 @@
 <template>
-  <div class="container">
+  <div class="breweries-index">
+    <h1 class="text-center mb-5">
+      Breweries
+    </h1>
+
     <div class="row">
-      <div class="col-sm" v-for="brewery in breweries">
-        <div>
-          <router-link :to="'/breweries/' + brewery.id">{{ brewery.name }}</router-link>
-        </div>
-        <div>
-          <router-link :to="'/breweries/' + brewery.id">
-            <img class="image-fluid" :src="brewery.image_url" :alt="brewery.name">
-          </router-link>
-        </div>
+      <div class="col-sm-4 mb-2" v-for="brewery in breweries">
+        <router-link :to="'/breweries/' + brewery.id">
+          <div class="card text-white bg-dark mb-3">
+            <img :src="brewery.image_url" :alt="brewery.name" class="card-img-top">
+            <div class="card-body text-info">
+              <h5 class="card-title">
+                {{ brewery.name }}
+              </h5>
+              <p class="card-text">
+                {{ brewery.name}}
+              </p>
+            </div>
+          </div>
+        </router-link>
       </div>
     </div>
   </div>

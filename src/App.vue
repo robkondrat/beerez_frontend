@@ -72,7 +72,16 @@ img {
 }
 
 body {
-  color: green;
+  font-family: "Hoefler Text", "Baskerville Old Face",Garamond,"Times New Roman", serif;
+  background-color: green;
+}
+
+.navbar {
+  background-color: #660066;
+}
+
+a.navbar-brand.text-my-green {
+  color: #0A0;
 }
 
 </style>
