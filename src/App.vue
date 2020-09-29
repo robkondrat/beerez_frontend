@@ -3,7 +3,7 @@
 
     <div>
       <b-navbar toggleable="lg" type="dark" variant="dark">
-        <b-navbar-brand href="#">BeerEZ</b-navbar-brand>
+        <b-navbar-brand href="/">BeerEZ</b-navbar-brand>
 
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -59,7 +59,7 @@
   text-align: center;
   color: #2c3e50;
   /* background-image: url('/Users/robkondratowicz/Desktop/Actualize/beerez_frontend/public/dark_wood.png'); */
-  background-color: grey;
+  background-color: darkolivegreen;
 
 }
 
@@ -83,7 +83,6 @@ img {
 
 body {
   font-family: "Hoefler Text", "Baskerville Old Face",Garamond,"Times New Roman", serif;
-  background-color: green;
 }
 
 .navbar {
