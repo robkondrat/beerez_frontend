@@ -1,41 +1,51 @@
 <template>
   <div id="app">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">BeerEZ</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/">Home </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/beers/">Beers</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/breweries/">Breweries</router-link>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Account
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <router-link class="dropdown-item" to="/carted_beers">My Cart</router-link>
-              <router-link class="dropdown-item" to="/signup">Signup</router-link>
-              <router-link class="dropdown-item" to="/login">Login</router-link>
-              <router-link class="dropdown-item" to="/logout">Logout</router-link>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-    <router-view/>
+    <div>
+      <b-navbar toggleable="lg" type="dark" variant="dark">
+        <b-navbar-brand href="#">BeerEZ</b-navbar-brand>
+
+          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item href="/">Home</b-nav-item>
+            <b-nav-item href="/beers/">Beers</b-nav-item>
+            <b-nav-item href="/breweries/">Breweries</b-nav-item>
+
+          </b-navbar-nav>
+
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto">
+            <b-nav-form>
+              <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
+              <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+            </b-nav-form>
+
+            <b-nav-item href="/carted_beers/">Cart</b-nav-item>
+
+
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template v-slot:button-content>
+                <em>Account</em>
+              </template>
+              <!-- <ul v-if="userEmail" class="navbar-nav ml-auto mr-4">
+                <li class="nav-item text-light">Welcome, {{ userEmail }}</li>
+              </ul> -->
+              <b-dropdown-item href="/signup/">Signup</b-dropdown-item>
+              <b-dropdown-item href="/login/">Login</b-dropdown-item>
+              <b-dropdown-item href="/logout/">Logout</b-dropdown-item>
+            </b-nav-item-dropdown>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
+    <div class="container pt-5">
+      <router-view/>
+    </div>
+
+    
   </div>
   
 </template>
@@ -85,3 +95,28 @@ a.navbar-brand.text-my-green {
 }
 
 </style>
+
+<script>
+var axios = require('axios');
+
+export default {
+  data: function() {
+    return {
+      userEmail: "",
+      titleFilter: "",
+      beers: []
+    };
+  },
+  created: function() {
+    var email = localStorage.getItem("userEmail");
+    if (email) {
+      this.userEmail = email;
+    }
+    axios
+      .get("/api/beers")
+      .then(response => {
+        this.recipes = response.data;
+      });
+  }
+}
+</script>
