@@ -17,17 +17,19 @@
         </b-card>
       </router-link>
     </div> -->
+
     <div class="row">
       <div class="col-sm-4 mb-2" v-for="beer in beers">
         <router-link :to="'/beers/' + beer.id">
-          <div class="card text-white bg-dark mb-3">
-            <img class="card-img-top" :src="beer.image_url" :alt="beer.name">
-            <div class="card-body text-info">
-              <h5 class="card-title">
-                {{ beer.name }}
-              </h5>
-              <p class="card-text">{{ beer.price }}</p>
-            </div>
+          <div class="card text-white bg-dark mx-auto mb-2" style="min-height: 275px; max-height: 400px;">
+              <img class="card-img-top" :src="beer.image_url" :alt="beer.name">
+              <div class="card-body text-info">
+                <h5 class="card-title">
+                  {{ beer.name }}
+                </h5>
+                <p class="card-text">{{ beer.price }}</p>
+              </div>
+            
           </div>
         </router-link>
       </div>
