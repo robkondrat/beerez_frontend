@@ -20,7 +20,7 @@
           Quantity: {{ cartedBeers.quantity }}
         </div>
         <div>
-          Subtotal: {{ cartedBeers.subtotal }}
+          Subtotal: ${{ cartedBeers.subtotal }}
         </div>
 
       </div>

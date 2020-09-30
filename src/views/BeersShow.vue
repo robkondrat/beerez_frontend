@@ -11,7 +11,7 @@
       min="1"
       v-on:change="setQuantity($event)"
       >
-    <button type="button" class="btn btn-primary" v-on:click="getQuantity($event)">Add to Cart</button>
+    <button type="button" class="btn btn-primary" v-on:click="addToCart()">Add to Cart</button>
 
     <p>{{ beer.category }}</p>
     <img :src="beer.image_url" :alt="beer.name" width=300>
@@ -56,7 +56,6 @@
             image_url: ""
           }
         },
-        formCompleted: false,
         selectedQuantity: ""
       };
     },
@@ -70,10 +69,16 @@
     methods: {
       setQuantity(event) {
         this.selectedQuantity = event.target.value
-        console.log(this.selectedQuantity)
       },
-      getQuantity(event) {
-        // console.log(event.target)
+      addToCart() {
+        var params = {
+          beer_id: this.beer.id,
+          quantity: this.selectedQuantity
+        }
+
+        axios.post("/api/carted_beers", params).then(response => {
+          this.$router.push("/carted_beers/")
+        }).catch(error => console.log(error.response))
       }
     }
   }
