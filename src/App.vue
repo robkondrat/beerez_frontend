@@ -3,7 +3,7 @@
 
     <div>
       <b-navbar toggleable="lg" type="dark" variant="dark">
-        <b-navbar-brand href="/">BeerEZ</b-navbar-brand>
+        <b-navbar-brand href="/beers/">BeerEZ</b-navbar-brand>
 
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -17,10 +17,10 @@
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
-            <b-nav-form>
+            <!-- <b-nav-form>
               <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
               <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-            </b-nav-form>
+            </b-nav-form> -->
 
             <b-nav-item href="/carted_beers/">Cart</b-nav-item>
 
@@ -30,9 +30,9 @@
               <template v-slot:button-content>
                 <em>Account</em>
               </template>
-              <!-- <ul v-if="userEmail" class="navbar-nav ml-auto mr-4">
+              <ul v-if="userEmail" class="navbar-nav ml-auto mr-4">
                 <li class="nav-item text-light">Welcome, {{ userEmail }}</li>
-              </ul> -->
+              </ul>
               <b-dropdown-item href="/signup/">Signup</b-dropdown-item>
               <b-dropdown-item href="/login/">Login</b-dropdown-item>
               <b-dropdown-item href="/logout/">Logout</b-dropdown-item>
@@ -108,7 +108,7 @@ var axios = require('axios');
 export default {
   data: function() {
     return {
-      userEmail: "",
+      users: [],
       titleFilter: "",
       beers: []
     };
@@ -123,6 +123,11 @@ export default {
       .then(response => {
         this.recipes = response.data;
       });
+    axios
+      .get("/api/users")
+      .then(response => {
+        this.users = response.data;
+      })
   }
 }
 </script>
