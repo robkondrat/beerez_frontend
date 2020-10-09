@@ -25,6 +25,9 @@
 
       </div>
     </div>
+    <div class="row">
+      <button v-on:click="goToCheckout()">Checkout</button>
+    </div>
   </div>
 </template>
 
@@ -68,6 +71,13 @@
           console.log(response.data);
           this.carted_beers = response.data;
         })
+    },
+    methods: {
+      goToCheckout() {
+        axios.post("/api/orders").then(response => {
+          this.$router.push("/orders/")
+        }).catch(error => console.log(error.response))
+      }
     }
   }
 </script>

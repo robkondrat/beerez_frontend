@@ -1,10 +1,19 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-sm" v-for="order in orders">
+    <h1>Order Confirmation</h1>
+    <div class="row" v-for="order in orders" v-if="order.total">
+      <div >
 
+        <h2>
+          Order ID: {{ order.id }}
+        </h2>
         <div>
           User ID: {{ order.user_id }}
+        </div>
+        <div>
+          <ul v-for="carted_beer in order.carted_beers">
+            <li>{{ carted_beer.beer.name }} x {{ carted_beer.quantity }} - {{ carted_beer.status }}</li>
+          </ul>
         </div>
         <div>
           Subtotal: {{ order.subtotal }}
