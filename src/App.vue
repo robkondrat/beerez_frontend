@@ -3,14 +3,14 @@
 
     <div>
       <b-navbar toggleable="lg" type="dark" variant="dark">
-        <b-navbar-brand href="/beers/">BeerEZ</b-navbar-brand>
+        <b-navbar-brand href="/">BeerEZ</b-navbar-brand>
 
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item href="/">Home</b-nav-item>
-            <b-nav-item href="/beers/">Beers</b-nav-item>
+            <b-nav-item href="/about/">About</b-nav-item>
+            <b-nav-item href="/">Beers</b-nav-item>
             <b-nav-item href="/breweries/">Breweries</b-nav-item>
 
           </b-navbar-nav>
@@ -57,6 +57,9 @@
 $image-path: '~@/../mdb/mdbvue/img';
 @import '~@/../mdb/mdbvue/scss/mdb-free.scss';
 
+html {
+  background-color: darkolivegreen;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -81,7 +84,7 @@ $image-path: '~@/../mdb/mdbvue/img';
   color: #42b983;
 }
 
-img {
+.index-img {
   display: block;
   height: 300px;
   width: auto;

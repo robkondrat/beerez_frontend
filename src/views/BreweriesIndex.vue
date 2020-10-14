@@ -7,8 +7,8 @@
     <div class="row">
       <div class="col-sm-4 mb-2" v-for="brewery in breweries">
         <router-link :to="'/breweries/' + brewery.id">
-          <div class="card text-white bg-dark mb-3">
-            <img :src="brewery.image_url" :alt="brewery.name" class="card-img-top">
+          <div class="card text-white bg-dark mb-3 h-100">
+            <img :src="brewery.image_url" :alt="brewery.name" class="card-img-top index-img">
             <div class="card-body text-info">
               <h5 class="card-title">
                 {{ brewery.name }}
