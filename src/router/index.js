@@ -9,6 +9,7 @@ import BreweriesIndex from '../views/BreweriesIndex.vue'
 import BreweriesShow from '../views/BreweriesShow.vue'
 import CartedBeers from '../views/CartedBeers.vue'
 import Orders from '../views/Orders.vue'
+import OrderConfirmation from '../views/OrderConfirmation.vue'
 
 Vue.use(VueRouter)
 
@@ -65,6 +66,11 @@ Vue.use(VueRouter)
     path: '/orders',
     name: 'orders',
     component: Orders
+  },
+  {
+    path: '/order-confirmation',
+    name: 'order-confirmation',
+    component: OrderConfirmation
   }
 ]
 

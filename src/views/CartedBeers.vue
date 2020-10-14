@@ -75,7 +75,7 @@
     methods: {
       goToCheckout() {
         axios.post("/api/orders").then(response => {
-          this.$router.push("/orders/")
+          this.$router.push("/order-confirmation/")
         }).catch(error => console.log(error.response))
       }
     }
