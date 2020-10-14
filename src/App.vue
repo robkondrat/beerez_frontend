@@ -36,6 +36,8 @@
               <b-dropdown-item href="/signup/">Signup</b-dropdown-item>
               <b-dropdown-item href="/login/">Login</b-dropdown-item>
               <b-dropdown-item href="/logout/">Logout</b-dropdown-item>
+              <b-dropdown-item href="/orders/">Order History</b-dropdown-item>
+
             </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>

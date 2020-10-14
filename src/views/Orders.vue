@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Order Confirmation</h1>
+    <h1>Order History</h1>
     <div class="row" v-for="order in orders" v-if="order.total">
       <div >
 
