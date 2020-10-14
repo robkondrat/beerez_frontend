@@ -82,8 +82,10 @@ $image-path: '~@/../mdb/mdbvue/img';
 }
 
 img {
-  width: 150px;
-  max-height: 300px;
+  display: block;
+  height: 300px;
+  width: auto;
+  object-fit: contain;
 }
 
 body {
@@ -97,6 +99,7 @@ body {
 a.navbar-brand.text-my-green {
   color: #0A0;
 }
+
 
 
 
