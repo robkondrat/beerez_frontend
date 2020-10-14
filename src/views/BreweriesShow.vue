@@ -9,6 +9,14 @@
     <div class="column">
       <p>{{ brewery.description }}</p>
     </div>
+    <h4>Popular Beers:</h4>
+      <div class="row">
+        <div class="beer-column" v-for="beer in brewery.beers">
+            <router-link  :to="'/beers/' + beer.id">
+              <img :src="beer.image_url" :alt="beer.name" class="beer-image">
+            </router-link>
+        </div>
+      </div>
     <!-- <Carousel :beers="beers" /> -->
     <!-- <div class="container">
       <div class="row">
@@ -32,6 +40,17 @@
   img {
     max-height: 500px;
     object-fit: contain;
+  }
+  .row {
+    padding: 10px;
+  }
+  .beer-image {
+    max-width: 100px;
+    object-fit: contain;
+  }
+  .beer-column {
+    float: left;
+    width: 25%;
   }
 
 </style>

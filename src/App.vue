@@ -106,6 +106,11 @@ a.navbar-brand.text-my-green {
   float: left;
   width: 50%;
 }
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
