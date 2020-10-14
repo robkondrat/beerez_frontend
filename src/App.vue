@@ -102,6 +102,27 @@ body {
 a.navbar-brand.text-my-green {
   color: #0A0;
 }
+.column {
+  float: left;
+  width: 50%;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+.brewery-website {
+  color: skyblue;
+}
+.brewery-website:visited {
+  color: orange;
+}
+.brewery-website:hover {
+  color: white;
+}
+.brewery-website:active {
+  color: orange;
+}
 
 
 

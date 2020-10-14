@@ -1,14 +1,19 @@
 <template>
   <div class="brewery-show">
-    <div class="container">
+    <div class="column">
+      <img :src="brewery.image_url" :alt="brewery.name" width=300>
+      <p>{{ brewery.address }}</p>
+      <p>{{ brewery.phone_number }}</p>
+      <a :href="brewery.website" class="brewery-website">{{ brewery.website }}</a>
+    </div>
+    <div class="column">
+      <p>{{ brewery.description }}</p>
+    </div>
+    <!-- <Carousel :beers="beers" /> -->
+    <!-- <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1>{{ brewery.name }}</h1>
-          <p>{{ brewery.address }}</p>
-          <p>{{ brewery.phone_number }}</p>
-          <p>{{ brewery.website }}</p>
-          <img :src="brewery.image_url" :alt="brewery.name" width=300>
-          <p>{{ brewery.description }}</p>
+
           <p>Popular Beers:</p>
           <router-link v-for="beer in brewery.beers" :to="'/beers/' + beer.id">
             {{ beer.name }}
@@ -18,14 +23,26 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
+<style>
+
+  img {
+    max-height: 500px;
+    object-fit: contain;
+  }
+
+</style>
 <script>
+  // import Carousel from "@/components/Carousel.vue";
   var axios = require("axios");
 
   export default {
+    // components: {
+    //   Carousel
+    // },
     data() {
       return {
         brewery: {
@@ -45,6 +62,8 @@
         .then(response => {
           console.log(response.data);
           this.brewery = response.data;
+          this.beers = response.data.beers;
+
         })
     }
   }
