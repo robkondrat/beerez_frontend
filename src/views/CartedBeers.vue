@@ -1,28 +1,23 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-sm" v-for="cartedBeers in carted_beers">
-        <div>
-          <router-link :to="'/carted_beers/' + cartedBeers.id">{{ cartedBeers.beer.name }}</router-link>
+    <div class="row" v-for="cartedBeer in carted_beers">
+      <div class="col-sm">
+        <div class="row">
+          <div class="col-sm">
+            <router-link :to="'/beers/' + cartedBeer.beer.id">
+              <img class="image-fluid" :src="cartedBeer.beer.image_url" :alt="cartedBeer.beer.name" style="max-width: 50px;">
+            </router-link>
+          </div>
+          <div class="col-sm" style="left: -20%; text-align: left;">
+            <br>
+            <b><router-link :to="'/beers/' + cartedBeer.beer.id">{{ cartedBeer.beer.name }}</router-link></b>
+            <div>{{ cartedBeer.beer.brewery.name }}</div>
+            <div>${{ cartedBeer.beer.price }}</div>
+            <div>x {{ cartedBeer.quantity }}</div>
+            <div>Subtotal: ${{ cartedBeer.subtotal }}</div>
+          </div>
         </div>
-        <div>
-          <router-link :to="'/carted_beers/' + cartedBeers.id">
-            <img class="image-fluid" :src="cartedBeers.beer.image_url" :alt="cartedBeers.beer.name">
-          </router-link>
-        </div>
-        <div>
-          Status: {{ cartedBeers.status }}
-        </div>
-        <div>
-          User ID: {{ cartedBeers.user_id }}
-        </div>
-        <div>
-          Quantity: {{ cartedBeers.quantity }}
-        </div>
-        <div>
-          Subtotal: ${{ cartedBeers.subtotal }}
-        </div>
-
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
       </div>
     </div>
     <div class="row">
@@ -30,6 +25,19 @@
     </div>
   </div>
 </template>
+
+<style>
+/* img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+} */
+</style>
 
 <script>
   var axios = require("axios");
@@ -68,7 +76,6 @@
     created() {
       axios.get("/api/carted_beers/")
         .then(response => {
-          console.log(response.data);
           this.carted_beers = response.data;
         })
     },
