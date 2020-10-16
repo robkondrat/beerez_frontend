@@ -1,32 +1,32 @@
 <template>
   <div class="container">
     <h1>Order History</h1>
-    <div class="row" v-for="order in orders" v-if="order.total">
-      <div >
+      <div v-for="order in orders" v-if="order.total">
 
         <h2>
-          Order ID: {{ order.id }}
+          Order #{{ order.id }}
         </h2>
         <div>
-          User ID: {{ order.user_id }}
+          Date: {{ order.created_at }}
         </div>
         <div>
-          <ul v-for="carted_beer in order.carted_beers">
-            <li>{{ carted_beer.beer.name }} x {{ carted_beer.quantity }} - {{ carted_beer.status }}</li>
-          </ul>
+          <div v-for="carted_beer in order.carted_beers">
+            <li><b><router-link :to="'/beers/' + carted_beer.beer.id">{{ carted_beer.beer.name }}: </router-link></b> {{ carted_beer.beer.price }} x {{ carted_beer.quantity }}</li>
+          </div>
         </div>
         <div>
-          Subtotal: {{ order.subtotal }}
+          Subtotal: ${{ order.subtotal }}
         </div>
         <div>
-          Tax: {{ order.tax }}
+          Tax: ${{ order.tax }}
         </div>
         <div>
-          Total: {{ order.total }}
+          Total: ${{ order.total }}
         </div>
+        <hr>
+
 
       </div>
-    </div>
   </div>
 </template>
 
@@ -41,6 +41,7 @@
         subtotal: "",
         tax: "",
         total: "",
+        created_at: "",
         carted_beers: []
       };
     },

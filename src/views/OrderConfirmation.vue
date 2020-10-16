@@ -1,30 +1,32 @@
 <template>
   <div class="container">
-    <h1>Order Confirmation</h1>
-    <div class="row">
-      <div >
-        <h2>
-          Order ID: {{ order.id }}
-        </h2>
-        <div>
-          User ID: {{ order.user_id }}
+    <h1>Order Confirmation #{{ order.id }}</h1>
+    <div >
+      <!-- <div>
+        User ID: {{ order.user_id }}
+      </div> -->
+      <div>
+        <div v-for="carted_beer in order.carted_beers" style="align: center;">
+          <li><b><router-link :to="'/beers/' + carted_beer.beer.id">{{ carted_beer.beer.name }}:</router-link></b> {{ carted_beer.beer.price }} x {{ carted_beer.quantity }}</li>
         </div>
-        <div>
-          <ul v-for="carted_beer in order.carted_beers">
-            <li>{{ carted_beer.beer.name }} x {{ carted_beer.quantity }} - {{ carted_beer.status }}</li>
-          </ul>
-        </div>
-        <div>
-          Subtotal: {{ order.subtotal }}
-        </div>
-        <div>
-          Tax: {{ order.tax }}
-        </div>
-        <div>
-          Total: {{ order.total }}
-        </div>
-
       </div>
+      <hr>
+      <div>
+        Subtotal: ${{ order.subtotal }}
+      </div>
+      <div>
+        Tax: ${{ order.tax }}
+      </div>
+      <b><div>
+        Total: ${{ order.total }}
+      </div></b>
+      <div>
+        <button class="btn btn-primary" @click="$router.push('../')">MOOR BEER</button>
+      </div>
+      <div>
+        <button class="btn btn-light" @click="$router.push('../orders')">Order History</button>
+      </div>
+
     </div>
   </div>
 </template>
@@ -40,6 +42,7 @@
           subtotal: "",
           tax: "",
           total: "",
+          created_at: "",
           carted_beers: []
         }
       };
