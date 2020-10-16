@@ -30,9 +30,9 @@
               <template v-slot:button-content>
                 <em>Account</em>
               </template>
-              <ul v-if="userEmail" class="navbar-nav ml-auto mr-4">
+              <!-- <ul v-if="userEmail" class="navbar-nav ml-auto mr-4">
                 <li class="nav-item text-light">Welcome, {{ userEmail }}</li>
-              </ul>
+              </ul> -->
               <b-dropdown-item href="/signup/">Signup</b-dropdown-item>
               <b-dropdown-item href="/login/">Login</b-dropdown-item>
               <b-dropdown-item href="/logout/">Logout</b-dropdown-item>
@@ -142,26 +142,25 @@ var axios = require('axios');
 export default {
   data: function() {
     return {
-      users: [],
+      user: {
+        id: "",
+        email: ""
+      },
       titleFilter: "",
       beers: []
     };
-  },
-  created: function() {
-    var email = localStorage.getItem("userEmail");
-    if (email) {
-      this.userEmail = email;
-    }
-    axios
-      .get("/api/beers")
-      .then(response => {
-        this.recipes = response.data;
-      });
-    axios
-      .get("/api/users")
-      .then(response => {
-        this.users = response.data;
-      })
   }
+  // created: function() {
+  //   var email = localStorage.getItem("userEmail");
+  //   if (email) {
+  //     this.userEmail = email;
+  //   }
+  //   axios
+  //     .get("/api/current_user")
+  //     .then(response => {
+  //       this.user = response.data;
+  //       console.log(this.user);
+  //     })
+  // }
 }
 </script>
