@@ -11,7 +11,7 @@
         </div>
         <div>
           <div v-for="carted_beer in order.carted_beers">
-            <li><b><router-link :to="'/beers/' + carted_beer.beer.id">{{ carted_beer.beer.name }}: </router-link></b> {{ carted_beer.beer.price }} x {{ carted_beer.quantity }}</li>
+            <li><b><router-link :to="'/beers/' + carted_beer.beer.id">{{ carted_beer.beer.name }}: </router-link></b> ${{ carted_beer.beer.price }} x {{ carted_beer.quantity }}</li>
           </div>
         </div>
         <div>
@@ -20,9 +20,9 @@
         <div>
           Tax: ${{ order.tax }}
         </div>
-        <div>
+        <b><div>
           Total: ${{ order.total }}
-        </div>
+        </div></b>
         <hr>
 
 
