@@ -8,7 +8,7 @@
               <img class="image-fluid" :src="cartedBeer.beer.image_url" :alt="cartedBeer.beer.name" style="max-width: 50px;">
             </router-link>
           </div>
-          <div class="col-sm" style="left: -20%; text-align: left;">
+          <div class="col-sm" style="left: -5%; text-align: left;">
             <br>
             <b><router-link :to="'/beers/' + cartedBeer.beer.id">{{ cartedBeer.beer.name }}</router-link></b>
             <div>{{ cartedBeer.beer.brewery.name }}</div>
@@ -16,13 +16,22 @@
             <div>x {{ cartedBeer.quantity }}</div>
             <div>Subtotal: ${{ cartedBeer.subtotal }}</div>
           </div>
+          <div class="col-sm">
+            <button class="btn btn-danger" v-on:click="destroyCartedBeer(cartedBeer)">X</button>
+          </div>
         </div>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray">
       </div>
     </div>
     <div class="row">
-      <button v-on:click="goToCheckout()">Checkout</button>
+      <div class="col">
+        <button class="btn btn-primary" @click="$router.push('../')">MOOR BEER</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-success" v-on:click="goToCheckout()">Checkout</button>
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -84,6 +93,17 @@ img:hover {
         axios.post("/api/orders").then(response => {
           this.$router.push("/order-confirmation/")
         }).catch(error => console.log(error.response))
+      },
+      destroyCartedBeer(inputCartedBeer) {
+        axios.delete("/api/carted_beers/" + inputCartedBeer.id)
+          .then(response => {
+            console.log("Successfully deleted!")
+          })
+          .catch(error => {
+          console.log(error.response.data);
+          });
+        var index = this.carted_beers.indexOf(inputCartedBeer);
+        this.carted_beers.splice(index, 1);
       }
     }
   }
