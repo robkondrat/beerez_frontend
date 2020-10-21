@@ -17,7 +17,7 @@
         </b-card>
       </router-link>
     </div> -->
-
+    <h2>Select from our beer selection below for more info and to order!</h2>
     <div class="row">
       <div class="col-sm-4 mb-2" v-for="beer in beers">
         <router-link :to="'/beers/' + beer.id">

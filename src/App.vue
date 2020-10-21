@@ -59,17 +59,14 @@
 $image-path: '~@/../mdb/mdbvue/img';
 @import '~@/../mdb/mdbvue/scss/mdb-free.scss';
 
-html {
-  background-color: darkolivegreen;
-}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: white;
   /* background-image: url('/Users/robkondratowicz/Desktop/Actualize/beerez_frontend/public/dark_wood.png'); */
-  background-color: darkolivegreen;
+  // background-color: darkolivegreen;
 
 }
 
