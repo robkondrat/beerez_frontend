@@ -3,7 +3,7 @@
 
     <div>
       <b-navbar toggleable="lg" type="dark" variant="dark">
-        <b-navbar-brand href="/">BeerEZ</b-navbar-brand>
+        <b-navbar-brand href="/"><img src="/logo.png" class="logo"></b-navbar-brand>
 
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -126,6 +126,10 @@ a.navbar-brand.text-my-green {
 }
 .brewery-website:active {
   color: orange;
+}
+.logo {
+  width: 35%;
+  float: left;
 }
 
 
