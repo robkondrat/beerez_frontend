@@ -38,6 +38,15 @@
   </div>
 
 </template>
+<style>
+.index-img {
+  margin-top: 10px;
+}
+.card {
+  padding-bottom: -50%;
+  margin-bottom: 20px;
+}
+</style>
 
 <script>
 var axios = require("axios");
