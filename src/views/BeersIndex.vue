@@ -1,22 +1,6 @@
 <template>
   <div class="container-fluid">
-    <!-- <div class="col-sm-4 mb-2" v-for="beer in beers">
-      <router-link :to="'/beers/' + beer.id">
-        <b-card
-          :title="beer.name"
-          :img-src="beer.img_url"
-          :img-alt="beer.name"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-          <b-img class="card-img-top" :src="beer.image_url"></b-img>
-          <b-card-text>
-            {{ beer.price }}
-          </b-card-text>
-        </b-card>
-      </router-link>
-    </div> -->
+
     <img src="/logo.png">
     <h3>Select from our beer selection below for more info and to order!</h3>
     <div class="row">
@@ -46,6 +30,10 @@
   padding-bottom: -50%;
   margin-bottom: 20px;
 }
+/* .shadowfilter {
+  -webkit-filter: drop-shadow(12px 12px 7px rgba(255, 255, 255, 0));
+  filter: drop-shadow(12px 12px 7px rgba(255, 255, 255, 0));
+} */
 </style>
 
 <script>

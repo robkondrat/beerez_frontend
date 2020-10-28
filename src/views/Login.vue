@@ -2,9 +2,7 @@
   <div class="login">
     <form v-on:submit.prevent="submit()">
       <h1>Login</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
+        <p class="text-danger" v-for="error in errors">{{ error }}</p>
       <div class="form-group">
         <label>Email:</label>
         <input type="email" class="form-control" v-model="email">
@@ -13,8 +11,12 @@
         <label>Password:</label>
         <input type="password" class="form-control" v-model="password">
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
+      <input type="submit" class="btn btn-success" value="Submit">
     </form>
+    <div>
+      <p>New user?</p>
+      <router-link to="/signup/"><button class="btn btn-primary">Signup</button></router-link>
+    </div>
   </div>
 </template>
 

@@ -21,11 +21,19 @@
         <label>Password confirmation:</label>
         <input type="password" class="form-control" v-model="passwordConfirmation">
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
+      <input type="submit" class="btn btn-success" value="Submit">
     </form>
+    <div>
+      <p>Already signed up?</p>
+      <router-link to="/login/"><button class="btn btn-primary">Login</button></router-link>
+    </div>
   </div>
 </template>
-
+<style>
+  .btn {
+    margin-bottom: 20px;
+  }
+</style>
 <script>
 import axios from "axios";
 

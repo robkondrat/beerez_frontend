@@ -8,7 +8,7 @@
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav>
+          <b-navbar-nav  class="b-nav-item">
             <b-nav-item href="/about/">About</b-nav-item>
             <b-nav-item href="/">Beers</b-nav-item>
             <b-nav-item href="/breweries/">Breweries</b-nav-item>
@@ -22,13 +22,13 @@
               <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
             </b-nav-form> -->
 
-            <b-nav-item href="/carted_beers/">Cart</b-nav-item>
+            <b-nav-item class="b-nav-item" href="/carted_beers/">Cart</b-nav-item>
 
 
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
               <template v-slot:button-content>
-                <em>Account</em>
+                <em class="b-nav-item">Account</em>
               </template>
               <!-- <ul v-if="userEmail" class="navbar-nav ml-auto mr-4">
                 <li class="nav-item text-light">Welcome, {{ userEmail }}</li>
@@ -54,6 +54,7 @@
 
 
 <style lang="scss">
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
 $image-path: '~@/../mdb/mdbvue/img';
@@ -94,6 +95,10 @@ body {
   font-family: "Hoefler Text", "Baskerville Old Face",Garamond,"Times New Roman", serif;
 }
 
+.b-nav-item {
+  font-size: 20px;
+}
+
 .navbar {
   background-color: #660066;
 }
@@ -129,6 +134,9 @@ a.navbar-brand.text-my-green {
 }
 .logo {
   width: 35%;
+  float: left;
+}
+#left-nav-items {
   float: left;
 }
 
