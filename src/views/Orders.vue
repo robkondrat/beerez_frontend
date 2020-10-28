@@ -24,8 +24,6 @@
           Total: ${{ order.total }}
         </div></b>
         <hr>
-
-
       </div>
   </div>
 </template>

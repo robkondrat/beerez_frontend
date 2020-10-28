@@ -21,21 +21,6 @@
           </router-link>
       </div>
     </div>
-    <!-- <Carousel :beers="beers" /> -->
-    <!-- <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-
-          <p>Popular Beers:</p>
-          <router-link v-for="beer in brewery.beers" :to="'/beers/' + beer.id">
-            {{ beer.name }}
-            <img :src="beer.image_url" :alt="beer.name">
-          </router-link>
-
-          </p>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -59,16 +44,11 @@
     float: left;
     width: 25%;
   }
-
 </style>
 <script>
-  // import Carousel from "@/components/Carousel.vue";
   var axios = require("axios");
 
   export default {
-    // components: {
-    //   Carousel
-    // },
     data() {
       return {
         brewery: {

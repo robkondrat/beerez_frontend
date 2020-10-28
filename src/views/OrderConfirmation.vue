@@ -2,9 +2,6 @@
   <div class="container">
     <h1>Order Confirmation #{{ order.id }}</h1>
     <div >
-      <!-- <div>
-        User ID: {{ order.user_id }}
-      </div> -->
       <div>
         <div v-for="carted_beer in order.carted_beers" style="align: center;">
           <li><b><router-link :to="'/beers/' + carted_beer.beer.id">{{ carted_beer.beer.name }}:</router-link></b> ${{ carted_beer.beer.price }} x {{ carted_beer.quantity }}</li>

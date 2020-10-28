@@ -29,8 +29,6 @@
           </router-link>
         </div>
       </div>
-
-
     </div>
   </div>
   
@@ -123,7 +121,6 @@
           this.$router.push("/signup/")
         })
       }
-
     }
   }
 </script>

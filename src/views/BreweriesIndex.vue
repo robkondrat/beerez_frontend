@@ -3,7 +3,6 @@
     <h1 class="text-center mb-5">
       Breweries
     </h1>
-
     <div class="row">
       <div class="col-sm-4 mb-2" v-for="brewery in breweries">
         <router-link :to="'/breweries/' + brewery.id">
