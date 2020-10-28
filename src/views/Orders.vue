@@ -46,7 +46,6 @@
     created() {
       axios.get("/api/orders/")
         .then(response => {
-          console.log(response.data);
           this.orders = response.data;
         })
     }

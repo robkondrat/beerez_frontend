@@ -47,7 +47,6 @@
     created() {
       axios.get("/api/orders/")
         .then(response => {
-          console.log(response.data[response.data.length - 1]);
           this.order = response.data[response.data.length - 1];
         })
     }

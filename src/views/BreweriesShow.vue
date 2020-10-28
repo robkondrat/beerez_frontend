@@ -66,7 +66,6 @@
     created() {
       axios.get("/api/breweries/" + this.$route.params.id)
         .then(response => {
-          console.log(response.data);
           this.brewery = response.data;
           this.beers = response.data.beers;
 
