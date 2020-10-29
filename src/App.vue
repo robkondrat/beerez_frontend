@@ -9,24 +9,24 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav  class="b-nav-item">
-            <b-nav-item href="/about/">About</b-nav-item>
+            <b-nav-item href="/about">About</b-nav-item>
             <b-nav-item href="/">Beers</b-nav-item>
-            <b-nav-item href="/breweries/">Breweries</b-nav-item>
+            <b-nav-item href="/breweries">Breweries</b-nav-item>
 
           </b-navbar-nav>
 
           <b-navbar-nav class="ml-auto">
-            <b-nav-item class="b-nav-item" href="/carted_beers/">Cart</b-nav-item>
+            <b-nav-item class="b-nav-item" href="/carted_beers">Cart</b-nav-item>
 
 
             <b-nav-item-dropdown right>
               <template v-slot:button-content>
                 <em class="b-nav-item">Account</em>
               </template>
-              <b-dropdown-item href="/signup/">Signup</b-dropdown-item>
-              <b-dropdown-item href="/login/">Login</b-dropdown-item>
-              <b-dropdown-item href="/logout/">Logout</b-dropdown-item>
-              <b-dropdown-item href="/orders/">Order History</b-dropdown-item>
+              <b-dropdown-item href="/signup">Signup</b-dropdown-item>
+              <b-dropdown-item href="/login">Login</b-dropdown-item>
+              <b-dropdown-item href="/logout">Logout</b-dropdown-item>
+              <b-dropdown-item href="/orders">Order History</b-dropdown-item>
 
             </b-nav-item-dropdown>
           </b-navbar-nav>
